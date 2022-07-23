@@ -8,22 +8,23 @@
     <link rel="stylesheet" href="main.css" />
   </head>
   <body>
+    <section class= "container">
     <header>
       <img
         src="img/Daily_Journal_Logo.jpeg"
         alt="Daily_Journal_Logo"
-        style="width: 5%; height: 5%"
+        style="width: 20%; height: 20%"
       />
+      <form class="entryForm">
       <section class="quoteBlockForm">
-        <input type="text" placeholder />
+        <h1 class="name">Mariana Mena</h1>
+        <!-- <input type="text" placeholder="entryDate"> -->
       </section>
-      <h1 class="name">Mariana_Mena</h1>
       <hr />
     </header>
     <main>
       <section class="entry">
         <h2>Daily Journal</h2>
-        <form class="entryForm">
           <fieldset class="entry__date">
             <label for="entryDate">Date</label>
             <input type="date" name="entryDate" class="entryForm__date" />
@@ -40,7 +41,6 @@
           <fieldset class="entry__mood">
             <label for="entryDate">Mood of the day</label>
             <select name="mood" id="mood">
-              <option value="" disabled selected>What I Feel?</option> 
               <option value="Happy">Happy</option>
               <option value="ok">ok</option>
               <option value="Sad">Sad</option>
@@ -86,5 +86,6 @@
       <p>https://github.com/Mary-Mena21</p>
       <p>&copy; 2022 NSS.com</p>
     </footer>
+  </section>
   </body>
 </html>

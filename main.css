@@ -1,6 +1,25 @@
+body{
+  background-image:"img\Journal.jpg";
+  background-repeat:repeat;
+  background-position:center center;
+  background-size:cover; 
+  background-attachment:fixed;
+
+  position:absolute;
+  top:0;
+}
 .name{
   font-weight: bold;
   font-size: 18px;
   display: inline;
   margin: 10px;
+}
+.container{
+  border: 2px green solid;
+  width: 500px;
+  border-radius: 20px;
+  padding: 20px;
+  display:flex;
+  flex-direction: column;
+  align-content: center;
 }
