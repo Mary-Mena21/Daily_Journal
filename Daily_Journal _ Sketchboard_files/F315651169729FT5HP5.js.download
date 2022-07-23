@@ -1,0 +1,964 @@
+var lift_settings = {};
+window.lift.extend(lift_settings,window.liftJQuery);
+window.lift.extend(lift_settings,{"liftPath": "/lift", "ajaxRetryCount": 3, "ajaxPostTimeout": 5000, "gcPollingInterval": 75000, "gcFailureRetryTimeout": 15000, "cometGetTimeout": 140000, "cometFailureRetryTimeout": 10000, "cometServer": null, "logError": function(msg) {}, "ajaxOnFailure": function() {serverUnreachable();}, "ajaxOnStart": function() {if ( typeof liftAjaxStart == "function" ) { liftAjaxStart() };
+jQuery('#'+"ajax-loader").css("visibility","visible");}, "ajaxOnEnd": function() {if ( typeof liftAjaxStop == "function" ) { liftAjaxStop() };
+jQuery('#'+"ajax-loader").css("visibility","hidden");}});
+window.lift.init(lift_settings);
+var backend = {"_call_server": function(v) {lift.ajax('F315651169734AVNFVN=' + encodeURIComponent(JSON.stringify(v)), null, null, null)}, "load": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "load", payload: param});
+  return promise;
+}
+, "teams": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "teams", payload: param});
+  return promise;
+}
+, "getTeamInfo": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "getTeamInfo", payload: param});
+  return promise;
+}
+, "googleDriveIntegration": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "googleDriveIntegration", payload: param});
+  return promise;
+}
+, "setGoogleDriveIntegration": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "setGoogleDriveIntegration", payload: param});
+  return promise;
+}
+, "saveNewTeam": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "saveNewTeam", payload: param});
+  return promise;
+}
+, "leaveTeam": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "leaveTeam", payload: param});
+  return promise;
+}
+, "accountUsersForBoard": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "accountUsersForBoard", payload: param});
+  return promise;
+}
+, "addUser": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "addUser", payload: param});
+  return promise;
+}
+, "addUsersAndChangeBoardVisibility": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "addUsersAndChangeBoardVisibility", payload: param});
+  return promise;
+}
+, "setDefaultAccount": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "setDefaultAccount", payload: param});
+  return promise;
+}
+, "changeAccountName": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "changeAccountName", payload: param});
+  return promise;
+}
+, "removeAccountUser": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "removeAccountUser", payload: param});
+  return promise;
+}
+, "changeAccountUserRole": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "changeAccountUserRole", payload: param});
+  return promise;
+}
+, "acceptAccount": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "acceptAccount", payload: param});
+  return promise;
+}
+, "removeInvitation": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "removeInvitation", payload: param});
+  return promise;
+}
+, "pendingAccounts": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "pendingAccounts", payload: param});
+  return promise;
+}
+, "upgradeAccount": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "upgradeAccount", payload: param});
+  return promise;
+}
+, "getPlanForAccount": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "getPlanForAccount", payload: param});
+  return promise;
+}
+, "allPlans": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "allPlans", payload: param});
+  return promise;
+}
+, "upgradePlan": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "upgradePlan", payload: param});
+  return promise;
+}
+, "saveCreditCard": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "saveCreditCard", payload: param});
+  return promise;
+}
+, "createSubscription": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "createSubscription", payload: param});
+  return promise;
+}
+, "checkVatID": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "checkVatID", payload: param});
+  return promise;
+}
+, "getAccount": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "getAccount", payload: param});
+  return promise;
+}
+, "getAccountForBoardOrDefaultAccount": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "getAccountForBoardOrDefaultAccount", payload: param});
+  return promise;
+}
+, "getUserDefaultAccount": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "getUserDefaultAccount", payload: param});
+  return promise;
+}
+, "getUserDefaultAccountIfInvalidHash": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "getUserDefaultAccountIfInvalidHash", payload: param});
+  return promise;
+}
+, "paySubscription": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "paySubscription", payload: param});
+  return promise;
+}
+, "getLicenses": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "getLicenses", payload: param});
+  return promise;
+}
+, "regenerateInvoice": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "regenerateInvoice", payload: param});
+  return promise;
+}
+, "cancelSubscription": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "cancelSubscription", payload: param});
+  return promise;
+}
+, "reauthorizeSubscription": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "reauthorizeSubscription", payload: param});
+  return promise;
+}
+, "applyCoupon": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "applyCoupon", payload: param});
+  return promise;
+}
+, "saveTeamName": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "saveTeamName", payload: param});
+  return promise;
+}
+, "saveTeamName2": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "saveTeamName2", payload: param});
+  return promise;
+}
+, "saveMembers": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "saveMembers", payload: param});
+  return promise;
+}
+, "saveMembers2": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "saveMembers2", payload: param});
+  return promise;
+}
+, "setupDone": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "setupDone", payload: param});
+  return promise;
+}
+, "setupDone2": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "setupDone2", payload: param});
+  return promise;
+}
+, "personalDomain": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "personalDomain", payload: param});
+  return promise;
+}
+, "getTeamId": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "getTeamId", payload: param});
+  return promise;
+}
+, "reenableOrganizationSetup": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "reenableOrganizationSetup", payload: param});
+  return promise;
+}
+, "findMyAllAccountsByPrimaryOwner": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "findMyAllAccountsByPrimaryOwner", payload: param});
+  return promise;
+}
+, "deleteCurrentTeam": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "deleteCurrentTeam", payload: param});
+  return promise;
+}
+, "deleteAccount": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "deleteAccount", payload: param});
+  return promise;
+}
+};
+var backendAuthService = {"_call_server": function(v) {lift.ajax('F315651169740HJ3F0T=' + encodeURIComponent(JSON.stringify(v)), null, null, null)}, "currentAuthData": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "currentAuthData", payload: param});
+  return promise;
+}
+, "enableQuickMode": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "enableQuickMode", payload: param});
+  return promise;
+}
+, "disableQuickMode": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "disableQuickMode", payload: param});
+  return promise;
+}
+, "showBoardUsers": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "showBoardUsers", payload: param});
+  return promise;
+}
+, "hideBoardUsers": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "hideBoardUsers", payload: param});
+  return promise;
+}
+, "enableLibraryManualShowHide": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "enableLibraryManualShowHide", payload: param});
+  return promise;
+}
+, "disableLibraryManualShowHide": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "disableLibraryManualShowHide", payload: param});
+  return promise;
+}
+, "tipFreehandDone": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "tipFreehandDone", payload: param});
+  return promise;
+}
+, "tipMapViewDone": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "tipMapViewDone", payload: param});
+  return promise;
+}
+, "tipQuickConnectDone": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "tipQuickConnectDone", payload: param});
+  return promise;
+}
+, "tipSlackDone": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "tipSlackDone", payload: param});
+  return promise;
+}
+, "getAd": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "getAd", payload: param});
+  return promise;
+}
+, "umDismissed": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "umDismissed", payload: param});
+  return promise;
+}
+, "enableUserProperties": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "enableUserProperties", payload: param});
+  return promise;
+}
+, "disableUserProperties": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "disableUserProperties", payload: param});
+  return promise;
+}
+};
+var boardService = {"_call_server": function(v) {lift.ajax('F315651169746OMBWCM=' + encodeURIComponent(JSON.stringify(v)), null, null, null)}, "publishOrPrivate": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "publishOrPrivate", payload: param});
+  return promise;
+}
+, "markBoardAsPro": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "markBoardAsPro", payload: param});
+  return promise;
+}
+, "makePublicBoard": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "makePublicBoard", payload: param});
+  return promise;
+}
+, "shareWithAccount": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "shareWithAccount", payload: param});
+  return promise;
+}
+, "makePrivate": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "makePrivate", payload: param});
+  return promise;
+}
+, "saveShowCommentsPublicly": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "saveShowCommentsPublicly", payload: param});
+  return promise;
+}
+, "takeOwnership": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "takeOwnership", payload: param});
+  return promise;
+}
+, "makePersonal": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "makePersonal", payload: param});
+  return promise;
+}
+, "commitVersion": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "commitVersion", payload: param});
+  return promise;
+}
+, "loadVersions": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "loadVersions", payload: param});
+  return promise;
+}
+, "revertToVersion": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "revertToVersion", payload: param});
+  return promise;
+}
+, "setBoardPassword": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "setBoardPassword", payload: param});
+  return promise;
+}
+, "loadUserBoards": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "loadUserBoards", payload: param});
+  return promise;
+}
+, "removeBoardFromUserList": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "removeBoardFromUserList", payload: param});
+  return promise;
+}
+, "copyCurrentAsNew": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "copyCurrentAsNew", payload: param});
+  return promise;
+}
+, "newBoard": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "newBoard", payload: param});
+  return promise;
+}
+, "deleteBoard": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "deleteBoard", payload: param});
+  return promise;
+}
+, "showWelcomeGuideNextTime": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "showWelcomeGuideNextTime", payload: param});
+  return promise;
+}
+, "showNotice": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "showNotice", payload: param});
+  return promise;
+}
+, "searchBoards": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "searchBoards", payload: param});
+  return promise;
+}
+, "searchTags": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "searchTags", payload: param});
+  return promise;
+}
+, "findAllTagsByDiagram": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "findAllTagsByDiagram", payload: param});
+  return promise;
+}
+, "findAllCurrentTeamTags": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "findAllCurrentTeamTags", payload: param});
+  return promise;
+}
+, "findBoardsByTag": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "findBoardsByTag", payload: param});
+  return promise;
+}
+, "addTag": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "addTag", payload: param});
+  return promise;
+}
+, "renameCurrentTeamTag": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "renameCurrentTeamTag", payload: param});
+  return promise;
+}
+, "deleteTag": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "deleteTag", payload: param});
+  return promise;
+}
+, "searchBoardContent": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "searchBoardContent", payload: param});
+  return promise;
+}
+, "saveBoardName": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "saveBoardName", payload: param});
+  return promise;
+}
+, "boardChecksum": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "boardChecksum", payload: param});
+  return promise;
+}
+, "setSketchMode": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "setSketchMode", payload: param});
+  return promise;
+}
+, "addGoogleDriveShortcut": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "addGoogleDriveShortcut", payload: param});
+  return promise;
+}
+, "publishManually": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "publishManually", payload: param});
+  return promise;
+}
+, "isManuallyPublished": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "isManuallyPublished", payload: param});
+  return promise;
+}
+, "unpublishManually": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "unpublishManually", payload: param});
+  return promise;
+}
+, "moveBoard": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "moveBoard", payload: param});
+  return promise;
+}
+};
+var boardNoUserService = {"_call_server": function(v) {lift.ajax('F315651169752YORDZB=' + encodeURIComponent(JSON.stringify(v)), null, null, null)}, "boardChecksum": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "boardChecksum", payload: param});
+  return promise;
+}
+};
+var backendProfileService = {"_call_server": function(v) {lift.ajax('F315651169757AB1YNY=' + encodeURIComponent(JSON.stringify(v)), null, null, null)}, "updateProfile": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "updateProfile", payload: param});
+  return promise;
+}
+, "currentUserAvatarUrl": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "currentUserAvatarUrl", payload: param});
+  return promise;
+}
+, "loadThumbnails": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "loadThumbnails", payload: param});
+  return promise;
+}
+, "copyLibraryFileToBoard": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "copyLibraryFileToBoard", payload: param});
+  return promise;
+}
+, "getSignedUrl": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "getSignedUrl", payload: param});
+  return promise;
+}
+, "deleteFromLibrary": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "deleteFromLibrary", payload: param});
+  return promise;
+}
+, "readNotification": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "readNotification", payload: param});
+  return promise;
+}
+, "sendEmail": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "sendEmail", payload: param});
+  return promise;
+}
+};
+var libraryService = {"_call_server": function(v) {lift.ajax('F315651169763W0WOQZ=' + encodeURIComponent(JSON.stringify(v)), null, null, null)}, "loadBoardShape": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "loadBoardShape", payload: param});
+  return promise;
+}
+, "loadShapes": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "loadShapes", payload: param});
+  return promise;
+}
+, "saveBoardShape": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "saveBoardShape", payload: param});
+  return promise;
+}
+, "saveBoardShapes": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "saveBoardShapes", payload: param});
+  return promise;
+}
+, "searchShapes": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "searchShapes", payload: param});
+  return promise;
+}
+, "presentationCommand": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "presentationCommand", payload: param});
+  return promise;
+}
+, "enableTutorialDone": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "enableTutorialDone", payload: param});
+  return promise;
+}
+, "getTimestamps": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "getTimestamps", payload: param});
+  return promise;
+}
+, "pingTabActive": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "pingTabActive", payload: param});
+  return promise;
+}
+};
+var sendToServer = function(x) {lift.ajax('F315651169770LP2VHK=' + encodeURIComponent(JSON.stringify(x)), null, null, null);};
+var exportBackend = {"_call_server": function(v) {lift.ajax('F315651169777JJHBY3=' + encodeURIComponent(JSON.stringify(v)), null, null, null)}, "oauthGitHub": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "oauthGitHub", payload: param});
+  return promise;
+}
+, "listRepositories": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "listRepositories", payload: param});
+  return promise;
+}
+, "repoTree": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "repoTree", payload: param});
+  return promise;
+}
+, "commitImage": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "commitImage", payload: param});
+  return promise;
+}
+, "publishBoard": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "publishBoard", payload: param});
+  return promise;
+}
+, "isBoardPublished": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "isBoardPublished", payload: param});
+  return promise;
+}
+, "unpublishBoard": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "unpublishBoard", payload: param});
+  return promise;
+}
+, "exportRequest": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "exportRequest", payload: param});
+  return promise;
+}
+};
+var flowdockIntegration = function(x) {lift.ajax('F315651169782ADGBQO=' + encodeURIComponent(JSON.stringify(x)), null, null, null);};
+var backendIntegrations = {"_call_server": function(v) {lift.ajax('F3156511697874U3QHU=' + encodeURIComponent(JSON.stringify(v)), null, null, null)}, "listFlowsForAccount": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "listFlowsForAccount", payload: param});
+  return promise;
+}
+, "listFlowsForBoard": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "listFlowsForBoard", payload: param});
+  return promise;
+}
+, "listAccountsWhereUserIsAdmin": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "listAccountsWhereUserIsAdmin", payload: param});
+  return promise;
+}
+, "listMyAccounts": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "listMyAccounts", payload: param});
+  return promise;
+}
+, "listCurrentUserAccounts": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "listCurrentUserAccounts", payload: param});
+  return promise;
+}
+, "addFlowToAccount": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "addFlowToAccount", payload: param});
+  return promise;
+}
+, "removeFlow": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "removeFlow", payload: param});
+  return promise;
+}
+, "oauthSlack": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "oauthSlack", payload: param});
+  return promise;
+}
+, "oauthHipChat": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "oauthHipChat", payload: param});
+  return promise;
+}
+, "loadSlackTeams": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "loadSlackTeams", payload: param});
+  return promise;
+}
+, "loadSlackChannels": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "loadSlackChannels", payload: param});
+  return promise;
+}
+, "sendSlackMessage": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "sendSlackMessage", payload: param});
+  return promise;
+}
+, "isSlackEnabledForTeam": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "isSlackEnabledForTeam", payload: param});
+  return promise;
+}
+, "isHipChatEnabledForTeam": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "isHipChatEnabledForTeam", payload: param});
+  return promise;
+}
+, "updateHipChatIntegration": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "updateHipChatIntegration", payload: param});
+  return promise;
+}
+, "saveSlackSlashToken": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "saveSlackSlashToken", payload: param});
+  return promise;
+}
+, "regenerateIntegrationUrl": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "regenerateIntegrationUrl", payload: param});
+  return promise;
+}
+, "sendToHipChat": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "sendToHipChat", payload: param});
+  return promise;
+}
+};
+var backendComments = {"_call_server": function(v) {lift.ajax('F315651169794LJK3QJ=' + encodeURIComponent(JSON.stringify(v)), null, null, null)}, "reopen": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "reopen", payload: param});
+  return promise;
+}
+, "createComment": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "createComment", payload: param});
+  return promise;
+}
+, "updateComment": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "updateComment", payload: param});
+  return promise;
+}
+, "deleteComment": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "deleteComment", payload: param});
+  return promise;
+}
+, "updateThreadResolveStatus": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "updateThreadResolveStatus", payload: param});
+  return promise;
+}
+, "switchCommentShapeIds": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "switchCommentShapeIds", payload: param});
+  return promise;
+}
+};
+var publicBackendComments = {"_call_server": function(v) {lift.ajax('F315651169800PSAKRJ=' + encodeURIComponent(JSON.stringify(v)), null, null, null)}, "boardComments": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "boardComments", payload: param});
+  return promise;
+}
+, "listComments": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "listComments", payload: param});
+  return promise;
+}
+};
+var backendClipboard = {"_call_server": function(v) {lift.ajax('F315651169806TCDSX1=' + encodeURIComponent(JSON.stringify(v)), null, null, null)}, "pasteFromClipboard2": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "pasteFromClipboard2", payload: param});
+  return promise;
+}
+};
+var unsubsBackend = {"_call_server": function(v) {lift.ajax('F315651169812EQA50L=' + encodeURIComponent(JSON.stringify(v)), null, null, null)}, "leaveFeedbackNewsletter": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "leaveFeedbackNewsletter", payload: param});
+  return promise;
+}
+, "leaveFeedback": 
+function(param) {
+  var promise = lift.createPromise();
+  this._call_server({guid: promise.guid, name: "leaveFeedback", payload: param});
+  return promise;
+}
+};
+var F315651169814NKNCA0 = function(json) {
+		if (json.vue) {
+			try {
+				window.VueApp.$emit(json.event, json)
+			} catch (e) {
+				console.log('vueCallback... failed', e)
+			}
+    }	else if (json.react) {
+			try {
+				window.ReactEventStream.emit(json.event, json)
+			} catch (e) {
+				console.log('vueCallback... failed', e)
+			}
+		} else {
+			var ng = angular.element('[ng-app]')
+			if (typeof ng !== 'undefined') {
+				try {
+					var $rootScope = ng.injector().get("$rootScope")
+					$rootScope.$broadcast(json.event, json)
+				} catch (e) {
+					console.log('angularCallback... failed', e)
+				}
+			}
+		}
+
+	;};
+var sketchboard_ng_page = "F315651169814NKNCA0";
+var destroy_F3156511010981CQE0Q = function() {}
+jQuery(document).ready(function() {lift.registerComets({"F315651169795JC3J5R": 315651169796, "F3156511010981CQE0Q": 315651151579, "F315651169808UOFYYJ": 315651169809, "F315651169748W52X4D": 315651169749, "F315651169742GNRCAA": 315651169743, "F315651169771BBGM44": 315651169772, "F315651169815JOX3V4": 315651169816, "F3156511698021P4OTL": 315651169803, "F315651169759L1DI4A": 315651169760, "F315651169736SVCMJG": 315651169737, "F315651169778SQTHOZ": 315651169779, "F3156511697302JO53R": 315651169731, "F315651169753CUICNF": 315651169754, "F3156511697900E4RVT": 315651169791, "F3156511697660T155N": 315651169767, "F315651169783YUHXXQ": 315651169784},true);
+setTimeout(function() {jQuery('#'+"lift__noticesContainer___notice").fadeOut(5000);}, 12000);
+setTimeout(function() {jQuery('#'+"lift__noticesContainer___warning").fadeOut(5000);}, 12000);
+setTimeout(function() {jQuery('#'+"lift__noticesContainer___error").fadeOut(5000);}, 12000);});
