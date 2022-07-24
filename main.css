@@ -1,25 +1,33 @@
-body{
-  background-image:"img\Journal.jpg";
-  background-repeat:repeat;
-  background-position:center center;
-  background-size:cover; 
-  background-attachment:fixed;
+body {
+  background-image: url(/img/Journal.jpg);
+  
+  /* background-repeat:repeat; */
+  background-size: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(138, 91, 31);
+ margin-top: 50px;
 
-  position:absolute;
-  top:0;
+
+
+
 }
-.name{
+.name {
   font-weight: bold;
   font-size: 18px;
-  display: inline;
+ 
   margin: 10px;
+  text-align: center;
 }
-.container{
-  border: 2px green solid;
+.container {
+  border: 2px #925E49 solid;
   width: 500px;
   border-radius: 20px;
   padding: 20px;
-  display:flex;
+  display: flex;
   flex-direction: column;
   align-content: center;
+  background-color:#D49D7E;
+  box-shadow: 10px 10px 10px #925E49;
 }
